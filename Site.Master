@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="St.Clair.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>St.Clair</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/favicon.ico" />
+    <link href="css/Login.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <%--   <link href="~/css/Login.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/common.css" rel="stylesheet" type="text/css" />--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <script type="text/javascript" language="javascript">
+     function DisableBackButton() {
+       window.history.forward()
+      }
+     DisableBackButton();
+     window.onload = DisableBackButton;
+     window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
+     window.onunload = function() { void (0) }
+    </script>
+<body>
+    <form id="loginForm" runat="server" autocomplete="off">
+        <!--Header starts here-->
+        <%--  <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePartialRendering="true" CombineScripts="false" >
+    </asp:ToolkitScriptManager>--%>
+        <div id="header">
+            <div class="toplinkarea">
+                <h1 class="logo"></h1>
+
+             
+            <asp:Button ID="Button1" Visible="false" runat="server" Text="Logout" Style="position:absolute; top: 39px; left: 1314px; width: 125px; height: 32px; border-radius: 25px; background-color: #fdc82f;" OnClick="Button1_Click" />
+            </div>
+        </div>
+        <!--Header ends here-->
+        <div id="holder-inner2" style="height: 400px;" class="image">
+            <asp:ContentPlaceHolder ID="Login1" runat="server">
+               <%-- <div style="height: 0; width: 20%; padding-bottom: 20%; background-color: red;margin:0 auto">
+                    <div style="height: 19px">
+                        Content goes here
+                    </div>
+                </div>--%>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer_container">
+            <div class="footer">
+                <div>
+                    <b>Version : 1.0.0 <strong>
+                        <asp:Label ID="lblAssemblyVersion" runat="server"></asp:Label></strong></b>
+                </div>
+                <p class="copy">
+                    &copy;<b> 2022 St.Clair College. All Rights Reserved. </b>
+                </p>
+                <p class="footerlink">
+                    <a href="#">Terms of Use</a> | <a href="#">Privacy Statement</a> | <a href="#">Site
+                    Map</a>
+                </p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
